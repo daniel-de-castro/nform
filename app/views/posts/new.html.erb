@@ -1,0 +1,13 @@
+<header class="container">
+	<div class="headerBtn" id="leftBtn"><%= link_to "Home", posts_path, :method => :get %></div>
+	<div style="float: right; text-alignment: center; padding-top: 20px; padding-right: 20px; color: #93f300;"><%= notice %></div>
+  <div style="float: right; text-alignment: center; padding-top: 20px; padding-right: 20px; color: #93f300;"><%= alert %></div>
+</header>
+
+<div style="padding-top: 1px; padding-bottom: 1px; background-color: #0086b3;">
+    <h2 style="text-align: center; color: white;">New post</h2>
+</div>
+
+<br>
+
+<div style="text-align: center;"><%= render 'form' %>

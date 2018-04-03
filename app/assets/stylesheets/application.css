@@ -1,0 +1,111 @@
+a:link {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #93f300;
+	text-decoration: none;
+}
+
+a:active {
+	color: #dddddd;
+	text-decoration: none;
+}
+
+hr {
+	margin-top: 5px;
+	width: 90%;
+}
+
+body {
+	font-family: "Gill Sans";
+    margin: 0;
+    margin-top: -21px;
+    padding: 0;
+}
+
+header, footer {
+    height: 59px;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 10px;
+	background-color: #000000;
+	text-align: center;
+	font-size: 16;
+    border: 1px #FFFFFF;
+    color: white;
+}
+
+h1 {
+	position: absolute;
+	width: 20%;
+	left: 40%;
+	right: 40%;
+	margin-top: 10px;
+	text-align: center;
+	font-weight: bolder;
+	letter-spacing: 9px;
+	word-spacing: 20px;
+}
+
+
+/* ======================== CLASSES ========================= */
+
+.separation {
+	margin-top: -19px;
+	margin-bottom: -17px;
+	height: 70px;
+	background-color: #0086b3;
+}
+
+.headerBtn {
+	padding: 28px;
+	margin-top: -6px;
+    cursor: pointer;
+}
+
+/* ======================= IDs ======================= */
+
+#leftBtn {
+	float: left;
+	border-right: 1px solid white;
+}
+
+#rightBtn {
+	float: right;
+	border-left: 1px solid white;
+}
+
+#postIndexSeparation {
+	height: 100px;
+}
+
+#linkOnWhite a:link{
+	color: #000000;
+	text-decoration: none;
+}
+
+#linkOnWhite a:visited{
+	color: #222222;
+	text-decoration: none;
+}
+
+#linkOnWhite a:hover{
+	color: #0086b3;
+	text-decoration: none;
+}
+
+#linkOnWhite a:active{
+	color: #93f300;
+	text-decoration: none;
+}
+
+#paragraphIndent {
+	padding-left: 40px;
+}

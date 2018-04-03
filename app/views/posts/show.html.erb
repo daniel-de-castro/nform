@@ -1,0 +1,60 @@
+<header class="container">
+	<div class="headerBtn" id="leftBtn"><%= link_to "Home", posts_path, :method => :get %></div>
+	<div style="float: right; text-alignment: center; padding-top: 20px; padding-right: 20px; color: #93f300;"><%= notice %></div>
+  <div style="float: right; text-alignment: center; padding-top: 20px; padding-right: 20px; color: #93f300;"><%= alert %></div>
+</header>
+
+<div style="padding-top: 1px; padding-left: 10px; padding-bottom: 1px; background-color: #0086b3;">
+  <p>
+    <h2 style="color: white;"><%= @post.title %></h2>
+    <small style="color: white;">by <%= @post.user.username %></small>
+  </p>
+</div>
+
+<div style="border: 2px solid; margin-top: -2px; margin-bottom: 19px; padding-top: 2px; padding-bottom: 2px; padding-left: 5px;"> 
+  <%= @post.body %>
+</div>
+
+<div class="separation"></div>
+
+<h3 style="margin-left: 3px;">Replies</h3>
+<% if @post.replies.blank? %>
+<p style="margin-left: 3px;">Be the first to reply!</p>
+<% end %>
+<% @post.replies.each do |reply| %>
+  <div style="margin-left: 3px;">
+    <p><small> by <%= reply.user.username %> on <%= reply.created_at.to_date %> </small></p>
+    <p> <%= reply.body %> </p>
+  </div>
+  <hr style="width: 100%;">
+<% end %>
+
+
+<br>
+
+<% if current_user.present? %>
+<div style="margin-left: 3px;">
+  <h4>New reply</h4>
+  <%= form_for([@post, @post.replies.build]) do |f| %>
+  
+    <%= f.hidden_field :username, :value => current_user.username %>
+  
+  <p> 
+    <%= f.label :body %> <br>
+    <%= f.text_area :body, size: "105x15" %>
+  </p>
+  <p> 
+    <%= f.submit %>
+  </p>
+  <% end %>
+</div>
+<% end %>
+
+<% if !current_user.present? %>
+<div style="margin-left: 3px;">
+  <p id="linkOnWhite"><%= link_to 'Sign up', new_user_registration_path, :method => :get %> or <%= link_to 'login', new_user_session_path, :method => :get %> to reply</p>
+</div>
+<% end %>
+
+<!-- %= link_to 'Edit', edit_post_path(@post) % -->
+<!-- %= link_to 'Back', posts_path % -->
